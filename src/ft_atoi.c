@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/20 19:06:17 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/04/25 22:46:18 by pdavi-al         ###   ########.fr       */
+/*   Created: 2023/04/20 19:05:36 by pdavi-al          #+#    #+#             */
+/*   Updated: 2023/04/26 20:50:54 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	memcmp(const void *ptr1, const void *ptr2, size_t num)
+int	ft_atoi(char *str)
 {
-	char	*p1;
-	char	*p2;
+	int	i;
+	int	number;
+	int	multiplyer;
 
-	p1 = ptr1;
-	p2 = ptr2;
-	while (num--)
+	i = 0;
+	number = 0;
+	multiplyer = 1;
+	while (str[i] != '\0' && str[i] == ' ')
+		i++;
+	if (i == ft_strlen(str))
+		return (number);
+	while (str[i] == '+' || str[i] == '-')
+		if (str[i++] == '-')
+			multiplyer *= -1;
+	while (ft_isdigit(str[i]))
 	{
-		if (*p1 != *p2)
+		number *= 10;
+		number += str[i] - '0';
+		i++;
 	}
-	return (0)
+	return (number * multiplyer);
 }

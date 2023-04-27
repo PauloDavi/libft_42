@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/20 19:05:44 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/04/25 20:13:54 by pdavi-al         ###   ########.fr       */
+/*   Created: 2023/04/20 19:06:12 by pdavi-al          #+#    #+#             */
+/*   Updated: 2023/04/26 20:51:15 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*calloc(size_t n, size_t size)
+void	*memchr(const void *ptr, int value, size_t num)
 {
-	void	*p;
+	char	*p;
 
-	p = malloc(size);
-	ft_bzero(p, size);
-	return (p);
+	p = (char *)ptr;
+	while (num--)
+	{
+		if (*p == value)
+			return (p);
+		p++;
+	}
+	return (NULL);
 }

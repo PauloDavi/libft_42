@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/20 19:06:33 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/04/22 14:53:51 by pdavi-al         ###   ########.fr       */
+/*   Created: 2023/04/20 19:06:07 by pdavi-al          #+#    #+#             */
+/*   Updated: 2023/04/26 20:50:28 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *src)
+int	ft_isprint(int c)
 {
-	char	*dest;
-
-	dest = malloc((ft_strlen(src) + 1) * sizeof(char));
-	if (dest == NULL)
-		return (dest);
-	return (ft_strcpy(dest, src));
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
 }
