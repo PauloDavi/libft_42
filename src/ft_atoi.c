@@ -6,7 +6,7 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:05:36 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/04/26 20:50:54 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/04/26 22:05:30 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	ft_atoi(char *str)
 	i = 0;
 	number = 0;
 	multiplyer = 1;
-	while (str[i] != '\0' && str[i] == ' ')
+	while (str[i] != '\0' && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+			|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r'))
 		i++;
 	if (i == ft_strlen(str))
 		return (number);
