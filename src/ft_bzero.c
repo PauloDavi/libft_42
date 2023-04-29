@@ -6,7 +6,7 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:05:41 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/04/22 14:44:28 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/04/28 20:57:41 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char	*p;
+	char	*ptr;
 
-	p = s;
+	ptr = (char *)s;
 	while (n--)
-		*p++ = '\0';
+		*ptr++ = '\0';
 }

@@ -47,6 +47,28 @@ TEST_GROUP_RUNNER(ft_isprint_test)
 	RUN_TEST_CASE(ft_isprint_test, should_return_1_when_is_print_character);
 }
 
+TEST_GROUP_RUNNER(ft_memchr_test)
+{
+	RUN_TEST_CASE(ft_memchr_test, should_return_pointer_when_str_has_char);
+	RUN_TEST_CASE(ft_memchr_test, should_return_null_when_str_not_has_char);
+}
+
+TEST_GROUP_RUNNER(ft_strdup_test)
+{
+	RUN_TEST_CASE(ft_strdup_test, should_test_all_possibilities_of_returns);
+}
+
+TEST_GROUP_RUNNER(ft_strnstr_test)
+{
+	RUN_TEST_CASE(ft_strnstr_test, should_find_sub_string);
+	RUN_TEST_CASE(ft_strnstr_test, should_not_find_sub_string);
+}
+
+TEST_GROUP_RUNNER(ft_strlen_test)
+{
+	RUN_TEST_CASE(ft_strlen_test, should_return_correct_string_lenght);
+}
+
 static void	run_all_tests(void)
 {
 	RUN_TEST_GROUP(ft_atoi_test);
@@ -57,6 +79,10 @@ static void	run_all_tests(void)
 	RUN_TEST_GROUP(ft_isascii_test);
 	RUN_TEST_GROUP(ft_isdigit_test);
 	RUN_TEST_GROUP(ft_isprint_test);
+	RUN_TEST_GROUP(ft_memchr_test);
+	RUN_TEST_GROUP(ft_strdup_test);
+	RUN_TEST_GROUP(ft_strnstr_test);
+	RUN_TEST_GROUP(ft_strlen_test);
 }
 
 int	main(int argc, const char *argv[])

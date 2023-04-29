@@ -6,8 +6,18 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:06:27 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/04/20 19:06:28 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/04/28 21:23:08 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	*ft_memset(void *s, int c, size_t n)
+{
+	char	*ptr;
+
+	ptr = (char *)s;
+	while (n--)
+		*ptr++ = (char)c;
+	return (s);
+}

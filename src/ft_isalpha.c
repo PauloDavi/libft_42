@@ -6,12 +6,11 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:00:09 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/04/26 22:02:40 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/04/28 21:00:42 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <ctype.h>
 
 int	ft_isalpha(int c)
 {

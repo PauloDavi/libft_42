@@ -6,22 +6,22 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:06:12 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/04/26 20:51:15 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/04/29 06:22:27 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memchr(const void *ptr, int value, size_t num)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*p;
+	const char	*ptr;
 
-	p = (char *)ptr;
-	while (num--)
+	ptr = (char *)s;
+	while (n--)
 	{
-		if (*p == value)
-			return (p);
-		p++;
+		if (*ptr == c)
+			return ((void *)ptr);
+		ptr++;
 	}
 	return (NULL);
 }
