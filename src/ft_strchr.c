@@ -6,7 +6,7 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:06:30 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/04/29 06:26:54 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/05/01 14:43:57 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		s++;
 	}
+	if (c == 0)
+		return ((char *)s);
 	return (NULL);
 }

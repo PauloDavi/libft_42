@@ -6,13 +6,13 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:04:04 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/04/29 06:25:34 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/05/01 15:27:41 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+unsigned int	ft_strlcat(char *dest, const char *src, unsigned int size)
 {
 	unsigned int	i;
 	unsigned int	j;

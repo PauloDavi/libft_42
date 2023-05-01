@@ -6,7 +6,7 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 13:32:44 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/05/01 13:33:37 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/05/01 19:00:57 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,4 +14,25 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
+	char		*str;
+	char const	*end;
+
+	end = s1 + ft_strlen(s1);
+	while (*s1 != '\0')
+	{
+		if (ft_strchr(set, *s1) == NULL)
+			break ;
+		s1++;
+	}
+	while (end != s1)
+	{
+		if (ft_strchr(set, *(end - 1)) == NULL)
+			break ;
+		end--;
+	}
+	str = malloc((end - s1 + 1) * sizeof(char));
+	if (str == NULL)
+		return (NULL);
+	ft_strlcpy(str, s1, end - s1 + 1);
+	return (str);
 }

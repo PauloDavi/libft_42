@@ -6,15 +6,15 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:02:11 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/04/26 21:04:08 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/05/01 15:03:55 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] != '\0')

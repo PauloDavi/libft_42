@@ -6,12 +6,12 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 13:32:32 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/05/01 13:33:34 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/05/01 14:29:26 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
-{
-}
+// char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+// {
+// }

@@ -6,7 +6,7 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:05:19 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/04/29 06:27:04 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/05/01 14:50:30 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	len;
+	char	*finded;
 
-	len = ft_strlen(s);
-	while (len--)
+	finded = NULL;
+	while (*s != '\0')
 	{
-		if (s[len - 1] == (char)c)
-			return ((char *)s + ((len - 1) * sizeof(char)));
+		if (*s == (char)c)
+			finded = (char *)s;
+		s++;
 	}
-	return (NULL);
+	if (c == 0)
+		finded = (char *)s;
+	return (finded);
 }

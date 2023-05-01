@@ -6,7 +6,7 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:05:36 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/04/28 21:02:25 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/05/01 14:56:33 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int	ft_atoi(const char *nptr)
 			|| nptr[i] == '\n' || nptr[i] == '\v' || nptr[i] == '\f'
 			|| nptr[i] == '\r'))
 		i++;
-	if (i == ft_strlen(nptr))
+	if (nptr[i] == '\0')
 		return (number);
-	while (nptr[i] == '+' || nptr[i] == '-')
+	if (nptr[i] == '+' || nptr[i] == '-')
 		if (nptr[i++] == '-')
 			multiplyer *= -1;
 	while (ft_isdigit(nptr[i]))

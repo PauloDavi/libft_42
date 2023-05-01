@@ -6,12 +6,12 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 13:30:59 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/05/01 13:33:17 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/05/01 14:29:09 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
-{
-}
+// void	ft_putendl_fd(char *s, int fd)
+// {
+// }

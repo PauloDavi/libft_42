@@ -6,12 +6,12 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 13:31:59 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/05/01 13:33:28 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/05/01 14:29:02 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
-{
-}
+// void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+// {
+// }
