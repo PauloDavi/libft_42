@@ -6,15 +6,15 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:05:11 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/04/29 03:32:08 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/05/01 13:21:52 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	while (*s1 != '\0' && *s2 != '\0')
+	while (*s1 != '\0' && *s2 != '\0' && n--)
 	{
 		if (*s1 != *s2)
 			return ((int)(*s1 - *s2));
