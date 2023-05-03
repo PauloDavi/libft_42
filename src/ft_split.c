@@ -12,90 +12,71 @@
 
 #include "libft.h"
 
-size_t	count_split(char const *s, char c)
-{
-	char const	*start;
-	char const	*end;
-	size_t		counter;
-
-	counter = 0;
-	start = s;
-	end = s;
-	while (1)
-	{
-		if (*s == c)
-			end = s;
-		if (end - start > 1)
-			counter++;
-		if (*s == '\0')
-			break ;
-		start = end;
-		s++;
-	}
-	if (end == start)
-		return (1);
-	return (counter);
-}
-
-char	*create_string(char const *s, char const *start, char const *end)
-{
-	char	*str;
-
-	if (start == s)
-		str = malloc((end - start + 1) * sizeof(char));
-	else
-		str = malloc((end - start) * sizeof(char));
-	if (str == NULL)
-		return (NULL);
-	if (start == s)
-		ft_strlcpy(str, start, end - start + 1);
-	else
-		ft_strlcpy(str, start + 1, end - start);
-	return (str);
-}
-
-char	**split_strings(char **array, char const *s, char c)
-{
-	char const	*start;
-	char const	*end;
-	size_t		count;
-
-	count = 0;
-	start = s;
-	end = s;
-	while (1)
-	{
-		if (*s == c)
-			end = s;
-		if (end - start > 1)
-		{
-			array[count] = create_string(s, start, end);
-			if (array[count++] == NULL)
-				return (NULL);
-		}
-		if (*s == '\0')
-			break ;
-		start = end;
-		s++;
-	}
-	array[count] = NULL;
-	return (array);
-}
+size_t count_words(char const *s, char c);
+char **split_words(char **words, size_t words_len, char const *s, char c);
+size_t count_letters(char const *s, char c);
 
 char	**ft_split(char const *s, char c)
 {
-	char	**array;
-	size_t	array_size;
+	char	**words;
+	size_t	words_len;
 
-	array_size = count_split(s, c);
-	array = malloc((array_size + 1) * sizeof(char *));
-	if (array == NULL)
-		return (array);
-	if (array_size == 1)
+	words_len = count_words(s, c);
+	words = malloc((words_len + 1) * sizeof(char *));
+	if (words == NULL)
+		return (NULL);
+	return (split_words(words, words_len, s, c));
+}
+
+size_t count_letters(char const *s, char c)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i] != c && s[i] != '\0')
+		i++;
+	return (i);
+}
+
+char **split_words(char **words, size_t words_len, char const *s, char c)
+{
+	size_t	i;
+	size_t	j;
+	size_t	current_char;
+
+	i = 0;
+	current_char = 0;
+	while (i < words_len)
 	{
-		array[1] = NULL;
-		array[0] = ft_strdup(s);
-		return (array);
+		j = 0;
+		while (s[current_char] == c)
+			current_char++;
+		words[i] = malloc((count_letters((s + current_char), c) + 1) * sizeof(char));
+		if (words[i] == NULL)
+			return (NULL);
+		while (s[current_char] != c && s[current_char] != '\0')
+			words[i][j++] = s[current_char++];
+		words[i][j] = '\0';
+		i++;
 	}
-	return (split_strings(array, s, c));
+	words[words_len] = NULL;
+	return (words);
+}
+
+size_t count_words(char const *s, char c)
+{
+	size_t	i;
+	size_t	count;
+
+	i = 0;
+	count = 0;
+	if (s[i] != c && s[i] != '\0')
+		count++;
+	while (s[i] != '\0')
+	{
+		if (s[i] == c && s[i + 1] != c && s[i + 1] != '\0')
+			count++;
+		i++;
+	}
+	return (count);
 }
