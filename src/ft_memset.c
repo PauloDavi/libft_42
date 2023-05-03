@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
+/*   By: paulodavi <paulodavi@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:06:27 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/04/28 21:23:08 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/05/03 00:34:41 by paulodavi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ void	*ft_memset(void *s, int c, size_t n)
 
 	ptr = (char *)s;
 	while (n--)
-		*ptr++ = (char)c;
+		*ptr++ = (unsigned char)c;
 	return (s);
 }

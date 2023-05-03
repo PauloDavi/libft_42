@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
+/*   By: paulodavi <paulodavi@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:05:41 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/04/28 20:57:41 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/05/03 00:30:02 by paulodavi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char	*ptr;
-
-	ptr = (char *)s;
-	while (n--)
-		*ptr++ = '\0';
+	ft_memset(s, '\0', n);
 }

@@ -3,41 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
+/*   By: paulodavi <paulodavi@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 13:31:45 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/05/01 19:18:13 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/05/03 02:28:54 by paulodavi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
-// {
-// 	unsigned int	i;
-// 	unsigned int	src_len;
-
-// 	i = 0;
-// 	src_len = 0;
-// 	while (src[src_len] != '\0')
-// 		src_len++;
-// 	if (size != 0)
-// 	{
-// 		while (src[i] != '\0' && i < (size - 1))
-// 		{
-// 			dest[i] = src[i];
-// 			i++;
-// 		}
-// 		dest[i] = '\0';
-// 	}
-// 	return (src_len);
-// }
-
-int	count_split(char const *s, char c)
+size_t	count_split(char const *s, char c)
 {
 	char const	*start;
 	char const	*end;
-	int			counter;
+	size_t		counter;
 
 	counter = 0;
 	start = s;
@@ -53,6 +32,8 @@ int	count_split(char const *s, char c)
 		start = end;
 		s++;
 	}
+	if (end == start)
+		return (1);
 	return (counter);
 }
 
@@ -104,16 +85,17 @@ char	**split_strings(char **array, char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**array;
+	size_t	array_size;
 
-	array = malloc((count_split(s, c) + 1) * sizeof(char *));
+	array_size = count_split(s, c);
+	array = malloc((array_size + 1) * sizeof(char *));
 	if (array == NULL)
 		return (array);
+	if (array_size == 1)
+	{
+		array[1] = NULL;
+		array[0] = ft_strdup(s);
+		return (array);
+	}
 	return (split_strings(array, s, c));
 }
-
-// int	main(void)
-// {
-// 	char	**tab;
-
-// 	tab = ft_split("tripouille", 0);
-// }

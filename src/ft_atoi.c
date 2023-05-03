@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
+/*   By: paulodavi <paulodavi@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:05:36 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/05/01 14:56:33 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/05/03 00:38:27 by paulodavi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	number;
-	int	multiplyer;
+	size_t	i;
+	int		number;
+	int		multiplyer;
 
 	i = 0;
 	number = 0;

@@ -3,42 +3,59 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
+/*   By: paulodavi <paulodavi@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 13:30:23 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/05/01 14:09:18 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/05/03 01:51:27 by paulodavi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+char	*create_n_str(long n);
+size_t	count_size(long n);
+
 char	*ft_itoa(int n)
 {
-	char	*nstr;
-	long	aux;
-	size_t	str_size;
+	if (n == 0)
+		return (ft_strdup("0"));
+	return (create_n_str(n));
+}
 
-	aux = n;
-	str_size = 0;
+char	*create_n_str(long n)
+{
+	char	*n_str;
+	size_t	n_size;
+
+	n_size = count_size(n);
+	n_str = malloc((n_size + 1) * sizeof(char));
+	if (n_str == NULL)
+		return (NULL);
+	n_str[n_size] = '\0';
 	if (n < 0)
-		str_size++;
+	{
+		n_str[0] = '-';
+		n *= -1;
+	}
+	while (n != 0)
+	{
+		n_str[--n_size] = "0123456789"[n % 10];
+		n /= 10;
+	}
+	return (n_str);
+}
+
+size_t	count_size(long n)
+{
+	size_t	n_size;
+
+	n_size = 0;
+	if (n < 0)
+		n_size++;
 	while (n != 0)
 	{
 		n /= 10;
-		str_size++;
+		n_size++;
 	}
-	nstr = malloc((str_size + 1) * sizeof(char));
-	if (nstr == NULL)
-		return (nstr);
-	if (aux < 0)
-	{
-		*nstr++ = '-';
-		aux *= -1;
-	}
-	while (n != 0)
-	{
-		*nstr = "0123456789"[aux % 10];
-		aux /= 10;
-	}
-	return (nstr);
+	return (n_size);
 }
