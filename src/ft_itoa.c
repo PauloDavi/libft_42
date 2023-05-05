@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paulodavi <paulodavi@student.42.fr>        +#+  +:+       +#+        */
+/*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 13:30:23 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/05/03 01:51:27 by paulodavi        ###   ########.fr       */
+/*   Updated: 2023/05/03 23:53:17 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*create_n_str(long n);
-size_t	count_size(long n);
+static char		*create_n_str(long n);
+static size_t	count_size(long n);
 
 char	*ft_itoa(int n)
 {
@@ -22,7 +22,7 @@ char	*ft_itoa(int n)
 	return (create_n_str(n));
 }
 
-char	*create_n_str(long n)
+static char	*create_n_str(long n)
 {
 	char	*n_str;
 	size_t	n_size;
@@ -45,7 +45,7 @@ char	*create_n_str(long n)
 	return (n_str);
 }
 
-size_t	count_size(long n)
+static size_t	count_size(long n)
 {
 	size_t	n_size;
 

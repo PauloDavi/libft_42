@@ -6,7 +6,7 @@
 /*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:05:44 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/05/01 14:38:12 by pdavi-al         ###   ########.fr       */
+/*   Updated: 2023/05/05 20:36:34 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	unsigned char	*ptr;
 
+	if (size == 0)
+		return (NULL);
 	if (nmemb > __SIZE_MAX__ / size)
 		return (NULL);
 	ptr = malloc(nmemb * size);

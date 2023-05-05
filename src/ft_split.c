@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paulodavi <paulodavi@student.42.fr>        +#+  +:+       +#+        */
+/*   By: pdavi-al <pdavi-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 13:31:45 by pdavi-al          #+#    #+#             */
-/*   Updated: 2023/05/03 02:28:54 by paulodavi        ###   ########.fr       */
+/*   Updated: 2023/05/03 23:51:12 by pdavi-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t count_words(char const *s, char c);
-char **split_words(char **words, size_t words_len, char const *s, char c);
-size_t count_letters(char const *s, char c);
+static size_t	count_words(char const *s, char c);
+static char		**split_words(char **words, size_t words_len, char const *s,
+					char c);
+static size_t	count_letters(char const *s, char c);
 
 char	**ft_split(char const *s, char c)
 {
@@ -28,7 +29,7 @@ char	**ft_split(char const *s, char c)
 	return (split_words(words, words_len, s, c));
 }
 
-size_t count_letters(char const *s, char c)
+static size_t	count_letters(char const *s, char c)
 {
 	size_t	i;
 
@@ -38,7 +39,7 @@ size_t count_letters(char const *s, char c)
 	return (i);
 }
 
-char **split_words(char **words, size_t words_len, char const *s, char c)
+static char	**split_words(char **words, size_t words_len, char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
@@ -51,7 +52,8 @@ char **split_words(char **words, size_t words_len, char const *s, char c)
 		j = 0;
 		while (s[current_char] == c)
 			current_char++;
-		words[i] = malloc((count_letters((s + current_char), c) + 1) * sizeof(char));
+		words[i] = malloc((count_letters((s + current_char), c) + 1)
+				* sizeof(char));
 		if (words[i] == NULL)
 			return (NULL);
 		while (s[current_char] != c && s[current_char] != '\0')
@@ -63,7 +65,7 @@ char **split_words(char **words, size_t words_len, char const *s, char c)
 	return (words);
 }
 
-size_t count_words(char const *s, char c)
+static size_t	count_words(char const *s, char c)
 {
 	size_t	i;
 	size_t	count;
