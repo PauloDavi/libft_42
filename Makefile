@@ -1,65 +1,37 @@
-# ==========================================
-#   Unity Project - A Test Framework for C
-#   Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams
-#   [Released under MIT License. Please refer to license.txt for details]
-# ==========================================
+CC := cc
+CFLAGS := -Wall -Wextra -Werror
+NAME := libft.a
 
-#We try to detect the OS we are running on, and adjust commands as needed
-ifeq ($(OS),Windows_NT)
-  ifeq ($(shell uname -s),) # not in a bash-like shell
-	CLEANUP = del /F /Q
-	MKDIR = mkdir
-  else # in a bash-like shell, like msys
-	CLEANUP = rm -f
-	MKDIR = mkdir -p
-  endif
-	TARGET_EXTENSION=.exe
-else
-	CLEANUP = rm -f
-	MKDIR = mkdir -p
-	TARGET_EXTENSION=.out
-endif
+SRC_DIR := .
+INC_DIR := .
 
-C_COMPILER=cc
-ifeq ($(shell uname -s), Darwin)
-C_COMPILER=clang
-endif
+SRC_FILES := ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
-UNITY_ROOT=./Unity
+SRC_BONUS := ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
-CFLAGS=-std=c99
-CFLAGS += -Wall
-CFLAGS += -Wextra
-CFLAGS += -Wpointer-arith
-CFLAGS += -Wcast-align
-CFLAGS += -Wwrite-strings
-CFLAGS += -Wswitch-default
-CFLAGS += -Wunreachable-code
-CFLAGS += -Winit-self
-CFLAGS += -Wmissing-field-initializers
-CFLAGS += -Wno-unknown-pragmas
-CFLAGS += -Wstrict-prototypes
-CFLAGS += -Wundef
-CFLAGS += -Werror
-CFLAGS += -Wold-style-definition
-#CFLAGS += -Wno-misleading-indentation
+SRCS := $(addprefix $(SRC_DIR)/,$(SRC_FILES))
+BONUS := $(addprefix $(SRC_DIR)/,$(SRC_BONUS))
 
-TARGET_BASE1=all_tests
-TARGET1 = $(TARGET_BASE1)$(TARGET_EXTENSION)
-SRC_FILES1=\
-  $(UNITY_ROOT)/src/unity.c \
-  $(UNITY_ROOT)/extras/fixture/src/unity_fixture.c \
-  src/*.c \
-  test/*.c \
-  test/test_runners/*.c
-INC_DIRS=-Isrc -I$(UNITY_ROOT)/src -I$(UNITY_ROOT)/extras/fixture/src
-SYMBOLS=-DUNITY_FIXTURE_NO_EXTRAS
+OBJS := $(SRC_FILES:.c=.o)
+OBJS_BONUS := $(SRC_BONUS:.c=.o)
 
-all: clean default
+all: $(NAME)
 
-default:
-	$(C_COMPILER) $(CFLAGS) $(INC_DIRS) $(SYMBOLS) $(SRC_FILES1) -o $(TARGET1)
-	- ./$(TARGET1) -v
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
+
+%.o: $(SRC_DIR)/%.c
+	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
+
+bonus: $(OBJS_BONUS)
+	ar rcs $(NAME) $(OBJS_BONUS)
 
 clean:
-	$(CLEANUP) $(TARGET1)
+	rm -f *.o
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
