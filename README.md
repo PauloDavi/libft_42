@@ -1,6 +1,13 @@
 <h1 align=center>
-	<b>libft</b>
+	<b>LIBFT</b>
 </h1>
+
+<p align="center">
+  <img src="https://i.imgur.com/U7aswVo.png" width="140" alt="grade" />
+  <img src="https://i.imgur.com/FsXaP4p.png" width="120" alt="m" />
+</p>
+
+---
 
 In this repository you will find all the code developed during the *libft* project, including the mandatory Parts 1 and 2, the **bonus** functions and other functions that may be useful in the future. These functions must be compiled (through a *Makefile*) into a library ***libft.a*** for later use in the 42cursus program.
 
