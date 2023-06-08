@@ -22,11 +22,11 @@
 </p>
 
 <h3 align="center">
-	<a href="#About">About</a>
+	<a href="#-about-the-project">About</a>
 	<span> • </span>
-	<a href="#Functions">Functions</a>
+	<a href="#-functions">Functions</a>
 	<span> • </span>
-	<a href="#Usage">Usage</a>
+	<a href="#%EF%B8%8F-usage">Usage</a>
 </h3>
 
 ---
