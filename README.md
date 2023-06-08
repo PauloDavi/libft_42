@@ -9,6 +9,30 @@
 
 ---
 
+<p align="center">
+	<b><i>Your very first own library</i></b><br>
+</p>
+
+<p align="center">
+	<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/PauloDavi/libft_42?color=lightblue" />
+	<img alt="Number of lines of code" src="https://img.shields.io/tokei/lines/github/PauloDavi/libft_42?color=critical" />
+	<img alt="Code language count" src="https://img.shields.io/github/languages/count/PauloDavi/libft_42?color=yellow" />
+	<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/PauloDavi/libft_42?color=blue" />
+	<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/PauloDavi/libft_42?color=green" />
+</p>
+
+<h3 align="center">
+	<a href="#About">About</a>
+	<span> • </span>
+	<a href="#Functions">Functions</a>
+	<span> • </span>
+	<a href="#Usage">Usage</a>
+</h3>
+
+---
+
+## 💡 About the project
+
 In this repository you will find all the code developed during the *libft* project, including the mandatory Parts 1 and 2, the **bonus** functions and other functions that may be useful in the future. These functions must be compiled (through a *Makefile*) into a library ***libft.a*** for later use in the 42cursus program.
 
 ---
@@ -39,7 +63,7 @@ In this repository you will find all the code developed during the *libft* proje
 
 ---
 
-## Functions
+## 💻 Functions
 
 ### Functions from `<ctype.h>`
 
@@ -101,7 +125,7 @@ In this repository you will find all the code developed during the *libft* proje
 
 ---
 
-## Usage
+## 🛠️ Usage
 
 ### Requirements
 
